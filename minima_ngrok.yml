@@ -1,0 +1,10 @@
+version: "2"
+authtoken: 38OJ0Ve4MzTihKpNkJwgBGCgZZp_6EKzzPjymaS7ZNio26Axs
+tunnels:
+  minima-backend:
+    proto: http
+    addr: 8080
+    domain: chary-cherishedly-albertha.ngrok-free.dev
+  minima-frontend:
+    proto: http
+    addr: 5173

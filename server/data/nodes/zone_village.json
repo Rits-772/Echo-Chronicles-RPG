@@ -1,0 +1,74 @@
+{
+  "village_entry": {
+    "text": "You pass through the rusted gates and find yourself on a dirt road leading to a small settlement. The houses are slumped and grey, their timber frames rotting. Yet, you see smoke rising from chimneys and people moving about. They walk with stiff, jerky movements. As you approach, a villager stops and stares at you with eyes that seem too wide, too vacant.",
+    "choices": [
+      {
+        "label": "Greet the villager",
+        "requirements": {},
+        "effects": {
+           "experience": 5
+        },
+        "next": "village_square"
+      },
+      {
+        "label": "Observe them from a distance (Perception Check)",
+        "requirements": {
+            "stats": { "perception": 8 }
+        },
+        "effects": {
+            "flags": { "saw_glitch": true },
+            "experience": 20
+        },
+        "next": "village_glitch_reveal"
+      }
+    ]
+  },
+  "village_square": {
+      "text": "The village square is quiet. A few people are gathered around a dry well, miming the action of drawing water, though there is no bucket and no rope. They smile at you—a uniform, practiced smile that doesn't reach their eyes.",
+      "choices": [
+          {
+              "label": "Ask about the Manor",
+              "effects": {},
+              "next": "village_elder_talk"
+          },
+           {
+              "label": "Visit the General Store",
+              "effects": {},
+              "next": "village_store"
+          }
+      ]
+  },
+  "village_glitch_reveal": {
+      "text": "You focus your senses. For a split second, the villager flickers. Their skin briefly turns into static, their limbs elongating into impossible angles before snapping back to 'normal'. The world here isn't just decaying—it's rendering incorrectly. They aren't people. They are projections.",
+      "choices": [
+          {
+              "label": "Keep this knowledge to yourself (High Sanity)",
+              "effects": { "stats": { "wisdom": 2 } },
+              "next": "village_square"
+          },
+          {
+              "label": "Confront them!",
+              "effects": { "combat": "bandit_01" },
+              "next": "village_square"
+          }
+      ]
+  },
+  "village_elder_talk": {
+      "text": "An old man steps forward. 'The Manor? It stands as it always has. The Anchor holds. We are safe. We are happy.' He repeats the last phrase three times, his voice devoid of inflection.",
+      "choices": [
+          {
+              "label": "Leave him be",
+              "next": "village_square"
+          }
+      ]
+  },
+  "village_store": {
+      "text": "The store is empty of goods, save for a few rusted tools. The shopkeeper stands behind the counter, staring at the wall.",
+      "choices": [
+           {
+              "label": "Leave",
+              "next": "village_square"
+          }
+      ]
+  }
+}

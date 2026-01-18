@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "level": 1,
+    "experience": 0,
+    "free_stat_points": 5,
+    "hp": 50,
+    "mp": 25,
+    "strength": 5,
+    "defence": 5,
+    "vitality": 5,
+    "wisdom": 5,
+    "agility": 5,
+    "perception": 5,
+    "lifeforce": 100
+  },
+  "inventory": [],
+  "equipment": {
+    "weapon": null,
+    "armor": null,
+    "accessory": null
+  },
+  "flags": {},
+  "current_node": "intro_01"
+}

@@ -1,0 +1,1764 @@
+{
+  "intro_01": {
+    "text": "You wake up in a quiet, dim room. A faint light flickers from a corner, casting dancing shadows on the walls. You can barely make out the shapes of old furniture around you. Your head feels heavy, and your memories are foggy—you're not sure how you got here.",
+    "choices": [
+      {
+        "label": "Investigate the light carefully",
+        "requirements": {
+          "stats": {
+            "perception": 5
+          }
+        },
+        "effects": {
+          "flags": {
+            "saw_light": true
+          },
+          "experience": 10
+        },
+        "next": "intro_light_investigation"
+      },
+      {
+        "label": "Ignore the light and explore the room",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "explored_room": true
+          },
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      },
+      {
+        "label": "Try to move and see if anything hurts",
+        "requirements": {
+          "stats": {
+            "vitality": 4
+          }
+        },
+        "effects": {
+          "flags": {
+            "checked_health": true
+          },
+          "stats": {
+            "hp": 5
+          },
+          "experience": 5
+        },
+        "next": "intro_health_check"
+      }
+    ]
+  },
+  "intro_light_investigation": {
+    "text": "You squint and focus on the flickering light. As your eyes adjust, you realize it's a candle—nearly burned down to nothing. The wick flares intermittently, struggling to stay alive. Near the candle, you notice something carved into the wooden table beneath it: a symbol you don't recognize. It looks ancient, deliberate. The sight fills you with an inexplicable sense of unease.",
+    "choices": [
+      {
+        "label": "Examine the symbol more closely",
+        "requirements": {
+          "stats": {
+            "perception": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "examined_symbol": true
+          },
+          "experience": 15
+        },
+        "next": "intro_symbol_revelation"
+      },
+      {
+        "label": "Blow out the candle",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "candle_blown": true
+          },
+          "experience": 5
+        },
+        "next": "intro_darkness"
+      },
+      {
+        "label": "Leave the candle and look around",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      }
+    ]
+  },
+  "intro_room_exploration": {
+    "text": "You stand unsteadily and examine the room more carefully. It's sparse—a bed with tattered sheets, a small table, wooden chairs arranged haphazardly. Dust covers everything, and cobwebs hang from the corners. There's a single window, shuttered and locked. On the far wall, you notice a door. It's closed, but not locked. The room smells stale, like it hasn't been inhabited in months.",
+    "choices": [
+      {
+        "label": "Try to open the shuttered window",
+        "requirements": {
+          "stats": {
+            "strength": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "window_opened": true
+          },
+          "experience": 20
+        },
+        "next": "intro_outside_view"
+      },
+      {
+        "label": "Go through the door",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Search the bed for clues",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "searched_bed": true
+          },
+          "items": [
+            {
+              "name": "Worn Journal",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 10
+        },
+        "next": "intro_journal_found"
+      }
+    ]
+  },
+  "intro_symbol_revelation": {
+    "text": "You lean closer to the symbol, your fingers tracing its grooves. The moment you touch it, a sharp pain shoots through your hand—not physical, but something deeper. A fragment of memory flashes: a voice calling your name, the same symbol glowing with ethereal light, a feeling of overwhelming loss. The vision fades as quickly as it came, leaving you gasping. The symbol seems to pulse with faint intent.",
+    "choices": [
+      {
+        "label": "Try to remember more—focus on the vision",
+        "requirements": {
+          "stats": {
+            "wisdom": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "memory_recovered": true
+          },
+          "stats": {
+            "mp": -5
+          },
+          "experience": 20
+        },
+        "next": "intro_memory_awakening"
+      },
+      {
+        "label": "Pull away and leave the symbol alone",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      },
+      {
+        "label": "Touch the symbol again",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "symbol_touched_again": true
+          },
+          "stats": {
+            "hp": -10,
+            "mp": -10
+          },
+          "experience": 10
+        },
+        "next": "intro_symbol_pain"
+      }
+    ]
+  },
+  "intro_darkness": {
+    "text": "You blow out the candle, and the room plunges into complete darkness. For a moment, you're engulfed in silence—until you hear a sound. It's faint, almost a whisper, coming from the direction of the door. Your heart races. You can't see anything, and the whisper grows slightly louder, though you still can't make out any words.",
+    "choices": [
+      {
+        "label": "Feel your way toward the whisper",
+        "requirements": {
+          "stats": {
+            "agility": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "followed_whisper": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Stay where you are and wait",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "waited_in_darkness": true
+          },
+          "experience": 5
+        },
+        "next": "intro_patient_vigil"
+      },
+      {
+        "label": "Try to relight the candle",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_light_investigation"
+      }
+    ]
+  },
+  "intro_hallway": {
+    "text": "You step through the door into a dimly lit hallway. The air is colder here, and there's a faint draft. To your left, you see a staircase leading downward into deeper darkness. To your right, the hallway continues with several closed doors along its length. Ahead, you notice the hallway opens into what might be a larger room. You're beginning to realize you're in some kind of building—possibly a house or manor.",
+    "choices": [
+      {
+        "label": "Descend the staircase",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "descend_stairs": true
+          },
+          "experience": 5
+        },
+        "next": "intro_basement"
+      },
+      {
+        "label": "Check the doors along the hallway",
+        "requirements": {
+          "stats": {
+            "perception": 5
+          }
+        },
+        "effects": {
+          "experience": 10
+        },
+        "next": "intro_doors_hallway"
+      },
+      {
+        "label": "Head toward the larger room ahead",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_main_hall"
+      }
+    ]
+  },
+  "intro_health_check": {
+    "text": "You cautiously flex your fingers, then your arms. Your muscles respond, though they feel heavy and sluggish. You attempt to sit up, and while there's a dull ache throughout your body, nothing seems broken. You swing your legs over the side of the bed and stand unsteadily. You're alive, and relatively intact. But you still have no idea where you are or why.",
+    "choices": [
+      {
+        "label": "Check what you're wearing",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "checked_clothing": true
+          },
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      },
+      {
+        "label": "Try to remember who you are",
+        "requirements": {
+          "stats": {
+            "wisdom": 5
+          }
+        },
+        "effects": {
+          "flags": {
+            "attempted_recall": true
+          },
+          "experience": 10
+        },
+        "next": "intro_identity_question"
+      },
+      {
+        "label": "Investigate the room",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      }
+    ]
+  },
+  "intro_outside_view": {
+    "text": "You strain against the shutters, using all your strength to force them open. With a groan, the old wooden shutters give way, and sunlight floods the room for the first time. Your eyes sting at the brightness. Outside, you see a desolate landscape—an overgrown garden, a forest in the distance, and mountains beyond. It's beautiful but lonely. There's no sign of civilization nearby. You're isolated, wherever you are.",
+    "choices": [
+      {
+        "label": "Look for a way to leave through the window",
+        "requirements": {
+          "stats": {
+            "agility": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "considered_escape": true
+          },
+          "experience": 10
+        },
+        "next": "intro_escape_attempt"
+      },
+      {
+        "label": "Continue exploring the building",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_journal_found": {
+    "text": "You pull out the journal from beneath the tattered sheets. Its leather cover is worn and cracked with age. When you open it, you find pages filled with handwriting—dense, hurried, filled with sketches and diagrams. Most of it is illegible at first glance, but you catch fragments: names you don't recognize, dates from years past, and that same symbol repeated over and over. The journal seems to be a chronicle of someone's obsession. Could it have belonged to you?",
+    "choices": [
+      {
+        "label": "Try to decipher the journal entries",
+        "requirements": {
+          "stats": {
+            "perception": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "journal_deciphered": true
+          },
+          "experience": 25
+        },
+        "next": "intro_journal_revelation"
+      },
+      {
+        "label": "Keep the journal and explore more",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Set the journal down and continue looking around",
+        "requirements": {},
+        "effects": {
+          "experience": 3
+        },
+        "next": "intro_room_exploration"
+      }
+    ]
+  },
+  "intro_memory_awakening": {
+    "text": "You close your eyes and push deeper into the vision. The memories cascade over you like a flood: Your name is... it's on the tip of your tongue. You were searching for something—or someone. There was danger. A choice was made, a sacrifice was offered. The symbol isn't malicious; it's a ward, a marker. Someone left it here deliberately, maybe for you. The sensation is overwhelming, and you feel changed by the knowledge, though the specifics remain frustratingly vague.",
+    "choices": [
+      {
+        "label": "Accept the mystery and continue your search",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "accepted_mystery": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Push even harder to recover more memories",
+        "requirements": {
+          "stats": {
+            "wisdom": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "deep_memory": true
+          },
+          "stats": {
+            "mp": -10
+          },
+          "experience": 25
+        },
+        "next": "intro_breakthrough"
+      }
+    ]
+  },
+  "intro_basement": {
+    "text": "You descend the stone steps carefully, your hand trailing along a damp wall. The air grows colder and thicker as you go deeper. At the bottom, you find a basement chamber—ancient and oppressive. Stone walls form a large circular room, and in its center stands something that makes your breath catch: an elaborate altar of sorts, covered in dust and age, with channels carved into the stone floor leading to and from it. There are no windows, only a single door back to the stairs. The space feels heavy with history and intention.",
+    "choices": [
+      {
+        "label": "Examine the altar",
+        "requirements": {
+          "stats": {
+            "perception": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "examined_altar": true
+          },
+          "experience": 20
+        },
+        "next": "intro_altar_revelation"
+      },
+      {
+        "label": "Leave the basement immediately",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "fled_basement": true
+          },
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Explore the chamber systematically",
+        "requirements": {
+          "stats": {
+            "wisdom": 6
+          }
+        },
+        "effects": {
+          "experience": 15
+        },
+        "next": "intro_basement_secrets"
+      }
+    ]
+  },
+  "intro_identity_question": {
+    "text": "You sit on the bed and try to think. Your name... you know it intellectually, but it feels distant, like a name read in a book. You remember fragments: a time before this place, moments of joy and sorrow, a sense of purpose. But the specific details refuse to coalesce. It's as if your memories are separated from you by a veil, visible but untouchable. The frustration is profound. You know you're someone, but that someone feels like a stranger.",
+    "choices": [
+      {
+        "label": "Stop trying and explore instead",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_room_exploration"
+      },
+      {
+        "label": "Focus and meditate on your past",
+        "requirements": {
+          "stats": {
+            "wisdom": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "meditated": true
+          },
+          "stats": {
+            "mp": -5
+          },
+          "experience": 15
+        },
+        "next": "intro_meditation_insight"
+      }
+    ]
+  },
+  "intro_main_hall": {
+    "text": "The hallway opens into a grand central hall. High ceilings arch overhead, and large windows line the walls—all shuttered or boarded. Moonlight creeps through the cracks, creating patterns on dusty furniture. This place was once magnificent; now it's a tomb of former grandeur. In the center of the hall stands a grand staircase leading upward to a second floor. On the far wall, you notice a library or study—shelves still lined with books, somehow preserved from total decay.",
+    "choices": [
+      {
+        "label": "Ascend to the second floor",
+        "requirements": {
+          "stats": {
+            "agility": 5
+          }
+        },
+        "effects": {
+          "experience": 10
+        },
+        "next": "intro_second_floor"
+      },
+      {
+        "label": "Search the library for answers",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_library"
+      },
+      {
+        "label": "Examine the shuttered windows",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_windows_examination"
+      }
+    ]
+  },
+  "intro_doors_hallway": {
+    "text": "You carefully examine each door along the hallway. Most are locked, but one—the third from the stairs—seems slightly ajar. You can hear a faint sound from within: a rhythmic ticking, like a clock. Peering inside, you glimpse what appears to be a study or office, with wallpapered walls and furniture outlines beneath cloth covers. The ticking grows slightly louder as you peer in, creating an unsettling cadence.",
+    "choices": [
+      {
+        "label": "Enter the room with the ticking sound",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "entered_ticking_room": true
+          },
+          "experience": 10
+        },
+        "next": "intro_clock_room"
+      },
+      {
+        "label": "Continue to the larger room ahead",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_main_hall"
+      },
+      {
+        "label": "Try to force open another locked door",
+        "requirements": {
+          "stats": {
+            "strength": 7
+          }
+        },
+        "effects": {
+          "experience": 15
+        },
+        "next": "intro_locked_door_reveal"
+      }
+    ]
+  },
+  "intro_end_exploration": {
+    "text": "You've explored the manor deeply, uncovering its secrets and mysteries. Whether you've found your true identity or simply accepted the mystery, you've gained something invaluable: an understanding of this place and what brought you here. Your next steps are clearer now, though questions remain. The journey ahead may be long, but you're ready to face it.",
+    "choices": [
+      {
+        "label": "End exploration and rest",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "exploration_complete": true
+          }
+        },
+        "next": "intro_end_exploration"
+      }
+    ]
+  },
+  "intro_symbol_pain": {
+    "text": "Pain floods through your hand and up your arm. The symbol burns with an intensity that feels personal—almost vindictive. Your vision blurs, and for a moment, you see glimpses of the past: a ritual, a sacrifice, a name you almost remember. When the vision clears, you're gasping for breath, your hand throbbing. The symbol has left a faint mark on your skin.",
+    "choices": [
+      {
+        "label": "Recover and leave the room",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "symbol_branded": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_patient_vigil": {
+    "text": "You wait in the darkness, your heart pounding. The whisper continues, neither growing closer nor fading away. Minutes stretch like hours. Then, gradually, the whisper fades entirely. The darkness becomes absolute. You realize you're holding your breath. When you finally exhale, you feel a strange sense of calm—as if something has decided you're worthy of its attention.",
+    "choices": [
+      {
+        "label": "Feel your way carefully toward the door",
+        "requirements": {
+          "stats": {
+            "perception": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "heard_whisper": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Try to relight the candle",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_light_investigation"
+      }
+    ]
+  },
+  "intro_altar_revelation": {
+    "text": "You approach the altar carefully. Its surface is carved with the same symbols you've seen before—they form patterns, almost like a map. In the center of the altar lies a stone tablet. When you touch it, your fingers slip into grooves—something beneath the dust. You carefully brush away centuries of grime and discover an inscription in a language you somehow understand: 'The bound one awakens at the turning of years.'",
+    "choices": [
+      {
+        "label": "Search for more clues in the chamber",
+        "requirements": {
+          "stats": {
+            "perception": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "altar_inscription_read": true
+          },
+          "items": [
+            {
+              "name": "Ancient Key",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 25
+        },
+        "next": "intro_cellar_exit"
+      },
+      {
+        "label": "Leave the basement and explore more",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "altar_examined": true
+          },
+          "experience": 10
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_basement_secrets": {
+    "text": "You move methodically through the chamber, examining every carved symbol and measuring the chamber's proportions. You notice the channels carved into the floor form a perfect circle around the altar—and beyond that, another circle, and another. The patterns suggest vast, interconnected rituals. In one corner, hidden behind a collapsed pillar, you find a sealed stone box.",
+    "choices": [
+      {
+        "label": "Try to open the stone box",
+        "requirements": {
+          "stats": {
+            "strength": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "stone_box_opened": true
+          },
+          "items": [
+            {
+              "name": "Ceremonial Dagger",
+              "type": "weapon",
+              "effect": {
+                "strength": 2
+              }
+            }
+          ],
+          "experience": 30
+        },
+        "next": "intro_dagger_revelation"
+      },
+      {
+        "label": "Leave the box and retreat",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_cellar_exit": {
+    "text": "You hold the ancient key carefully—it's warm to the touch, and seems to hum with dormant power. On the far wall of the basement, you now notice a keyhole you hadn't seen before. The key fits perfectly. Beyond the door lies darkness and the sound of running water. A path to somewhere else. The key itself feels important—like it's been waiting for you.",
+    "choices": [
+      {
+        "label": "Use the key and enter the passage",
+        "requirements": {
+          "items": ["Ancient Key"]
+        },
+        "effects": {
+          "flags": {
+            "passage_discovered": true
+          },
+          "experience": 20
+        },
+        "next": "underground_passage"
+      },
+      {
+        "label": "Keep the key and explore elsewhere",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_dagger_revelation": {
+    "text": "The stone box splits open with effort, revealing a ceremonial dagger. Its blade is dark, almost black, and when you lift it, you feel a surge of strength flow through you. This isn't just a weapon—it's an instrument of ritual, a tool of power. The dagger seems to resonate with the symbol on your hand from earlier, as if they're meant to work together.",
+    "choices": [
+      {
+        "label": "Ascend from the basement with the dagger",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "dagger_claimed": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_escape_attempt": {
+    "text": "You look out the window at the overgrown garden below. It's a significant drop—maybe twelve feet—but the tall grass and bushes might break your fall. The window opening is narrow but passable. Beyond the garden, the forest beckons. It's risky, but freedom might be just beyond this manor's walls.",
+    "choices": [
+      {
+        "label": "Attempt the jump",
+        "requirements": {
+          "stats": {
+            "agility": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "escaped_room": true
+          },
+          "stats": {
+            "hp": -10
+          },
+          "combat": "wolf_01",
+          "experience": 25
+        },
+        "next": "overgrown_garden"
+      },
+      {
+        "label": "Decide against it and return inside",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_clock_room": {
+    "text": "The room is dominated by a grandfather clock in the corner—its face shows no numbers, only symbols. The ticking is loud and rhythmic, almost hypnotic. On the desk beneath a cloth cover, you find a journal different from the one you found earlier. This one is more recent, with handwriting that steadies as you flip through the pages. It documents experiments, failures, and finally, success. The last entry is dated three months ago: 'The ritual is complete. They're sleeping now. When they wake...'",
+    "choices": [
+      {
+        "label": "Read the full journal entries",
+        "requirements": {
+          "stats": {
+            "wisdom": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "experiment_journal_read": true
+          },
+          "experience": 20
+        },
+        "next": "ritual_truth"
+      },
+      {
+        "label": "Leave the room and continue exploring",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_locked_door_reveal": {
+    "text": "You throw your shoulder against the door repeatedly until it splinters. Inside, you discover an armory—weapons hang from the walls, ancient armor stands ready, and in the center, a training dummy covered in scars and scratches. This place was built for conflict. On a weapon rack, you notice a well-maintained bow and a quiver of arrows—far better preserved than anything else you've found.",
+    "choices": [
+      {
+        "label": "Take the bow and arrows",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "found_armory": true
+          },
+          "items": [
+            {
+              "name": "Wooden Bow",
+              "type": "weapon",
+              "effect": {
+                "agility": 1
+              }
+            },
+            {
+              "name": "Arrows (20)",
+              "type": "consumable",
+              "effect": {}
+            }
+          ],
+          "experience": 20
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Leave the weapons and continue exploring",
+        "requirements": {},
+        "effects": {
+          "experience": 5
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_library": {
+    "text": "The library is vast, with shelves reaching toward the high ceiling. Books on magic, history, and forgotten rituals line the shelves. Dust particles dance in the moonlight filtering through the shutters. In the center of the room, you find a reading desk with a sprawling tome open to a page depicting the symbol you've seen repeatedly. The text describes it as 'The Seal of Binding'—a ward used to contain something dangerous.",
+    "choices": [
+      {
+        "label": "Study the tome about the symbol",
+        "requirements": {
+          "stats": {
+            "wisdom": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "seal_of_binding_learned": true
+          },
+          "items": [
+            {
+              "name": "Knowledge: The Seal",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 25
+        },
+        "next": "intro_seal_knowledge"
+      },
+      {
+        "label": "Search for more practical information",
+        "requirements": {
+          "stats": {
+            "perception": 6
+          }
+        },
+        "effects": {
+          "flags": {
+            "library_searched": true
+          },
+          "experience": 15
+        },
+        "next": "intro_main_hall"
+      }
+    ]
+  },
+  "intro_windows_examination": {
+    "text": "You try the shutters on each window—they're all sealed shut, as if intentionally locked. But on the fourth window, you notice something: fresh scratches around the lock mechanism, and the shutter is slightly warped, as if someone tried to force it open from the inside, recently. Near the window, you find a piece of torn fabric—expensive, well-made, stained with what might be blood.",
+    "choices": [
+      {
+        "label": "Follow the trail of the torn fabric",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "found_torn_fabric": true
+          },
+          "experience": 15
+        },
+        "next": "intro_second_floor"
+      },
+      {
+        "label": "Examine the scratched lock more closely",
+        "requirements": {
+          "stats": {
+            "perception": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "lock_examined": true
+          },
+          "experience": 20
+        },
+        "next": "intro_library"
+      }
+    ]
+  },
+  "intro_second_floor": {
+    "text": "The grand staircase creaks as you climb to the second floor. Up here, the hallway is lined with doors—bedrooms, you assume. At the far end, you see light filtering under a door. Unlike the rest of the manor, this room is illuminated. As you approach, you hear a soft sound: breathing. Someone else is here.",
+    "choices": [
+      {
+        "label": "Approach the lit room cautiously",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "found_living_creature": true
+          },
+          "experience": 15
+        },
+        "next": "lit_room_encounter"
+      },
+      {
+        "label": "Check the other bedrooms first",
+        "requirements": {
+          "stats": {
+            "agility": 6
+          }
+        },
+        "effects": {
+          "experience": 10
+        },
+        "next": "bedroom_search"
+      }
+    ]
+  },
+  "intro_journal_revelation": {
+    "text": "As you decipher the journal's cryptic entries, a clear picture emerges: You were part of an experiment. The writer was studying something powerful—something that existed between life and death. The journal entries suggest that 'the subject' (presumably you) was chosen specifically because of unique qualities they possessed. The final entries describe a ritual: binding, sealing, and placing into a deep sleep. The date matches when you believe you fell asleep—months ago. Or was it years?",
+    "choices": [
+      {
+        "label": "Accept the truth and continue exploring",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "identity_revealed": true,
+            "was_experiment": true
+          },
+          "experience": 30
+        },
+        "next": "intro_hallway"
+      },
+      {
+        "label": "Reject the implications and seek more proof",
+        "requirements": {},
+        "effects": {
+          "experience": 10
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "intro_meditation_insight": {
+    "text": "You close your eyes and let your thoughts settle. Slowly, fragmented memories surface like bubbles from deep water. You remember a place—not this manor, but somewhere older. You remember studying forbidden texts, remember choosing something, remember fear. A name surfaces: someone you cared for, and lost. The emotion is so strong it brings tears. But as quickly as the memories came, they fade again, leaving only the ghost of their meaning.",
+    "choices": [
+      {
+        "label": "Continue exploring with this partial knowledge",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "partial_memory_recovered": true
+          },
+          "experience": 15
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "overgrown_garden": {
+    "text": "You land hard in the tall grass, the wind knocked from your lungs. The fall was harder than expected—your legs ache, and you taste blood. But you're out of the manor, in the open air. The garden is wild and overgrown, filled with statues of strange figures and paths that lead nowhere. To the east, the forest proper begins. To the north, you can see what might be the road, overgrown but still visible.",
+    "choices": [
+      {
+        "label": "Head toward the forest",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "forest_entered": true
+          },
+          "experience": 10
+        },
+        "next": "deep_forest"
+      },
+      {
+        "label": "Follow the overgrown road",
+        "requirements": {},
+        "effects": {
+          "experience": 10
+        },
+        "next": "village_road"
+      }
+    ]
+  },
+  "underground_passage": {
+    "text": "The ancient key glows faintly as you pass through the threshold. The passage descends deeper, the sound of water growing louder. Luminescent fungi cling to the walls, casting an eerie green light. The passage opens into a vast underground cavern. At its center stands a pool of crystal-clear water that reflects light impossibly—there's no visible light source, yet it glows. On the far side of the pool, you see the mouth of another tunnel, and above it, an archway carved with runes.",
+    "choices": [
+      {
+        "label": "Examine the glowing pool",
+        "requirements": {
+          "stats": {
+            "perception": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "pool_examined": true
+          },
+          "experience": 25
+        },
+        "next": "pool_truth"
+      },
+      {
+        "label": "Head toward the rune archway",
+        "requirements": {},
+        "effects": {
+          "experience": 15
+        },
+        "next": "rune_chamber"
+      }
+    ]
+  },
+  "ritual_truth": {
+    "text": "The journal reveals the horrifying truth: This manor is a ritual site, and you were the subject. The experiments were designed to separate your consciousness from your body, to create a prison for something else—something powerful and dangerous. The ritual succeeded, but not completely. The journal's last entry says, 'It's waking. I can feel it stirring. The seal will hold...for now.' That entry was three months ago.",
+    "choices": [
+      {
+        "label": "Search for the seal and understand it",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "truth_known": true
+          },
+          "experience": 20
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "lit_room_encounter": {
+    "text": "As you enter the lit room, you stop in your tracks. A figure sits at a desk, writing by candlelight. It's a woman—alive, conscious, and very much aware of your presence. She looks up from her journal with eyes that hold both recognition and fear. 'You're awake,' she says quietly. 'I wasn't sure the seal would hold long enough for you to wake on your own. We don't have much time. The others are coming.'",
+    "choices": [
+      {
+        "label": "Demand answers immediately",
+        "requirements": {
+          "stats": {
+            "strength": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "met_woman": true,
+            "demanded_answers": true
+          },
+          "experience": 15
+        },
+        "next": "woman_confession"
+      },
+      {
+        "label": "Listen to what she has to say",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "met_woman": true,
+            "listened": true
+          },
+          "experience": 15
+        },
+        "next": "woman_confession"
+      }
+    ]
+  },
+  "woman_confession": {
+    "text": "'My name is Elena. I was part of the research, but I've had a change of heart. You were never supposed to wake up—at least, not while they still had you. But the seal is weakening. The entity inside is getting stronger. They're coming back to reinforce the binding.' She hands you a key. 'This opens the east wing. There's an escape route through the catacombs. But I can't leave—I need to buy you time. They can't know you're gone, or they'll pursue you beyond this manor.'",
+    "choices": [
+      {
+        "label": "Accept the key and escape",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "met_elena": true,
+            "has_escape_key": true
+          },
+          "items": [
+            {
+              "name": "East Wing Key",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 20
+        },
+        "next": "escape_sequence"
+      },
+      {
+        "label": "Refuse and confront the truth here",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "refused_escape": true
+          },
+          "experience": 15
+        },
+        "next": "final_confrontation_prep"
+      }
+    ]
+  },
+  "bedroom_search": {
+    "text": "You carefully check the bedrooms. Most are empty and dusty, untouched for years. But the last door is locked from the outside—with a heavy deadbolt and thick chain. Inside, you hear nothing, but you notice fresh footprints in the dust leading away from this room. Someone was recently imprisoned here.",
+    "choices": [
+      {
+        "label": "Unlock and open the door",
+        "requirements": {
+          "stats": {
+            "strength": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "found_prisoner": true
+          },
+          "experience": 20
+        },
+        "next": "prisoner_room"
+      },
+      {
+        "label": "Leave it and investigate further",
+        "requirements": {},
+        "effects": {
+          "experience": 10
+        },
+        "next": "intro_second_floor"
+      }
+    ]
+  },
+  "pool_truth": {
+    "text": "As you gaze into the pool, your reflection stares back—but it's not quite you. The reflection smiles while your face remains stern. It moves independently. In the pool's depths, you see something vast and ancient, watching you with intelligence and hunger. The pool isn't water—it's a gate. And something on the other side is very interested in you.",
+    "choices": [
+      {
+        "label": "Turn away and flee",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "pool_witnessed": true
+          },
+          "experience": 10
+        },
+        "next": "rune_chamber"
+      },
+      {
+        "label": "Touch the pool's surface",
+        "requirements": {
+          "stats": {
+            "wisdom": 9
+          }
+        },
+        "effects": {
+          "flags": {
+            "pool_touched": true
+          },
+          "stats": {
+            "mp": -15
+          },
+          "experience": 30
+        },
+        "next": "pool_communication"
+      }
+    ]
+  },
+  "rune_chamber": {
+    "text": "The archway's runes glow softly as you pass beneath it. The chamber beyond is vast, with walls covered entirely in carved text and symbols. At the center stands a pillar of stone, and atop it rests a crystal that pulses with light. The runes on the walls seem to form a story, a history of something ancient and powerful. As you read the narrative carved into stone, you realize: the manor is much older than you thought. This place predates human civilization.",
+    "choices": [
+      {
+        "label": "Study the runes carefully",
+        "requirements": {
+          "stats": {
+            "wisdom": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "runes_studied": true
+          },
+          "experience": 25
+        },
+        "next": "ancient_truth"
+      }
+    ]
+  },
+  "escape_sequence": {
+    "text": "Elena leads you quickly through hidden passages within the manor. The building reveals itself to be far more complex than you realized—tunnels and secret corridors connect every room. As you move through them, you hear voices in the distance, footsteps echoing. They're searching for someone. You realize Elena was buying you time—she stayed behind to mislead them. Together you reach the east wing. Elena gives you one final instruction: 'Follow the passage down. It leads to the old catacombs. Keep moving until you see daylight. Don't look back.' She hands you a small pouch with supplies.",
+    "choices": [
+      {
+        "label": "Follow her instructions and escape",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "escaped_manor": true
+          },
+          "items": [
+            {
+              "name": "Healing Potion",
+              "type": "consumable",
+              "effect": {
+                "hp": 30
+              }
+            },
+            {
+              "name": "Mana Potion",
+              "type": "consumable",
+              "effect": {
+                "mp": 20
+              }
+            }
+          ],
+          "experience": 25
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "outside_world": {
+    "text": "You emerge from the catacombs into bright daylight. After so long in the manor's shadows, the light is almost painful. You find yourself on a hillside overlooking a vast landscape. To the south, you can see the edge of civilization—a village, perhaps, or a town. To the west, mountains pierce the clouds. To the north, the forest stretches endlessly. The manor lies behind you, descending into the valley. You're free, but many questions remain. Who are 'the others' Elena mentioned? Why were you chosen for this ritual? And what was that ancient presence in the pool?",
+    "choices": [
+      {
+        "label": "Head toward the village to the south",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "chose_village": true
+          },
+          "experience": 20
+        },
+        "next": "village_arrival"
+      },
+      {
+        "label": "Head toward the mountains to the west",
+        "requirements": {
+          "stats": {
+            "vitality": 7
+          }
+        },
+        "effects": {
+          "flags": {
+            "chose_mountains": true
+          },
+          "experience": 20
+        },
+        "next": "mountain_pass"
+      },
+      {
+        "label": "Head into the northern forest",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "chose_forest": true
+          },
+          "experience": 20
+        },
+        "next": "deep_forest"
+      }
+    ]
+  },
+  "village_arrival": {
+    "text": "The village is small, quaint, and utterly normal—which feels jarring after everything you've experienced. Humans go about their daily lives, unaware of the ancient powers and hidden rituals existing mere miles away. A tavern sign creaks in the wind. The inn looks warm and inviting. But as you walk through the village, you notice something odd: people glance at you, then quickly look away. Some whisper. You don't belong here—they can sense it.",
+    "choices": [
+      {
+        "label": "Enter the tavern and listen to gossip",
+        "requirements": {},
+        "effects": {
+          "experience": 15
+        },
+        "next": "tavern_scene"
+      },
+      {
+        "label": "Seek out the village elder",
+        "requirements": {
+          "stats": {
+            "wisdom": 6
+          }
+        },
+        "effects": {
+          "experience": 15
+        },
+        "next": "elder_meeting"
+      }
+    ]
+  },
+  "tavern_scene": {
+    "text": "Inside the tavern, the chatter quiets as you enter. You take a seat and order a drink. As you listen to nearby conversations, you catch fragments of village lore: stories about the 'cursed manor' in the hills, about the 'experimentation cult' that supposedly operated there years ago, about people who went missing near that place. The bartender, an older man, eventually approaches you. 'You've got the look of someone who's seen things,' he says. 'If you're thinking of heading back to that manor, I'd advise against it.'",
+    "choices": [
+      {
+        "label": "Ask the bartender for more information",
+        "requirements": {},
+        "effects": {
+          "experience": 15
+        },
+        "next": "bartender_lore"
+      },
+      {
+        "label": "Leave the tavern and explore more",
+        "requirements": {},
+        "effects": {
+          "experience": 10
+        },
+        "next": "village_exploration"
+      }
+    ]
+  },
+  "deep_forest": {
+    "text": "The forest is ancient and dense, with trees so old they predate the manor. Roots twist across the path, and the canopy is so thick that little light reaches the ground. You hear the sounds of wildlife—birds, small creatures—but nothing that seems immediately threatening. As you venture deeper, you notice something: there are ruins here, crumbling stone structures covered in moss and vines. Temples, perhaps? Or something older still.",
+    "choices": [
+      {
+        "label": "Explore the ancient ruins",
+        "requirements": {
+          "stats": {
+            "perception": 7
+          }
+        },
+        "effects": {
+          "experience": 20
+        },
+        "next": "forest_temple"
+      },
+      {
+        "label": "Continue deeper into the forest",
+        "requirements": {},
+        "effects": {
+          "experience": 15
+        },
+        "next": "forest_encounter"
+      }
+    ]
+  },
+  "forest_encounter": {
+    "text": "As you push deeper into the forest, the trees open into a clearing. In the center stands a figure—a woman in robes, with silver eyes that seem to glow. She turns as you approach. 'I've been expecting you,' she says. 'Your awakening was no accident. It was planned, timed precisely. I am Lyra, one of the few who knew the truth about the ritual. Come. We have much to discuss, and time is running short.'",
+    "choices": [
+      {
+        "label": "Approach and hear her out",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "met_lyra": true
+          },
+          "experience": 20
+        },
+        "next": "lyra_revelation"
+      },
+      {
+        "label": "Attack her immediately",
+        "requirements": {
+          "stats": {
+            "agility": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "attacked_lyra": true
+          },
+          "experience": 25
+        },
+        "next": "lyra_combat"
+      }
+    ]
+  },
+  "intro_seal_knowledge": {
+    "text": "You pore over the tome and absorb its teachings. The Seal of Binding is ancient magic, designed to trap powerful entities between worlds. It requires specific components and a willing sacrifice—someone to anchor the seal with their life force. The ritual creates a bridge between the bound entity and the human world, with the sealed person serving as the lock. The seal weakens over time, especially if the holder is forced to wake. You realize: you ARE the seal. Your consciousness is the lock that keeps the entity imprisoned.",
+    "choices": [
+      {
+        "label": "Understand your purpose and continue",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "seal_understood": true
+          },
+          "experience": 25
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "prisoner_room": {
+    "text": "You break the chains, and inside you find another person—alive but barely conscious. It's a young man, malnourished and weak. His eyes flutter open as you approach. 'The seal...' he mutters. 'Don't let them... you have to... stop them...' He loses consciousness again. Whatever this man knows, it's important. You'll need to get him somewhere safe, get him medical attention, and wait for him to recover.",
+    "choices": [
+      {
+        "label": "Carry him to safety and care for him",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "rescued_prisoner": true
+          },
+          "items": [
+            {
+              "name": "Mysterious Prisoner",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 25
+        },
+        "next": "intro_hallway"
+      }
+    ]
+  },
+  "pool_communication": {
+    "text": "As your hand touches the pool's surface, a voice floods into your mind—ancient, vast, and infinitely patient. It shows you visions: a time before the world was as it is, when your kind and theirs walked together. It shows you the betrayal—a ritual that severed the connection, trapping it here. It shows you the truth: you weren't the experiment's subject. You were its guardian. The ritual didn't imprison it in you; it made you its keeper, its anchor to sanity in the mortal world.",
+    "choices": [
+      {
+        "label": "Accept your role as keeper",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "entity_communicated": true,
+            "keeper_role_accepted": true
+          },
+          "stats": {
+            "wisdom": 3,
+            "mp": 20
+          },
+          "experience": 40
+        },
+        "next": "rune_chamber"
+      },
+      {
+        "label": "Reject the entity's claims",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "entity_communicated": true,
+            "rejected_entity": true
+          },
+          "stats": {
+            "hp": -20
+          },
+          "experience": 25
+        },
+        "next": "escape_sequence"
+      }
+    ]
+  },
+  "ancient_truth": {
+    "text": "The runes tell a history spanning millennia. They describe a pact between two civilizations—one human, one other. The pact created harmony, but greed and fear led to betrayal. The 'other' civilization was sealed away, fragments trapped between worlds. The manor was built as a prison, layered with rituals and bindings. But the runes also describe an escape clause—a way to free what was trapped, but at tremendous cost. The price: the life of the one who serves as the seal.",
+    "choices": [
+      {
+        "label": "Understand fully and make a choice",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "ancient_truth_known": true
+          },
+          "stats": {
+            "wisdom": 2
+          },
+          "experience": 30
+        },
+        "next": "final_choice_hub"
+      }
+    ]
+  },
+  "final_choice_hub": {
+    "text": "You stand at a crossroads. The manor, the rituals, the entity, Elena, Lyra, the prisoner—all of it converges. You now understand the true nature of your awakening. Three paths lie before you: escape and live your life, free from the burden of being the seal. Accept your role as guardian and protect the world from what lies beyond. Or, break the seal entirely and unleash what was imprisoned, for better or worse. Whatever you choose will reshape not just your life, but the world itself.",
+    "choices": [
+      {
+        "label": "Choose freedom and escape",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "ending_freedom": true
+          },
+          "experience": 50
+        },
+        "next": "ending_freedom"
+      },
+      {
+        "label": "Choose duty and become the guardian",
+        "requirements": {
+          "stats": {
+            "wisdom": 10
+          }
+        },
+        "effects": {
+          "flags": {
+            "ending_guardian": true
+          },
+          "experience": 75
+        },
+        "next": "ending_guardian"
+      },
+      {
+        "label": "Choose rebellion and break the seal",
+        "requirements": {
+          "stats": {
+            "strength": 12
+          }
+        },
+        "effects": {
+          "flags": {
+            "ending_rebellion": true
+          },
+          "experience": 75
+        },
+        "next": "ending_rebellion"
+      }
+    ]
+  },
+  "ending_freedom": {
+    "text": "You choose life. You turn your back on the manor, on the entity, on the burden of being the seal. The seal begins to crack, but you don't wait to see the consequences. You disappear into the world, finding peace in anonymity. Years pass. The seal eventually breaks, but by then, you're far away. The entity is released, but without its keeper, it finds the mortal world alien and hostile. It retreats to the places between, waiting for the next keeper to be born. You live quietly, never forgetting what you escaped from, always wondering what might have been.",
+    "choices": [
+      {
+        "label": "The End - Freedom Route Completed",
+        "requirements": {},
+        "effects": {
+          "experience": 50
+        },
+        "next": "ending_freedom"
+      }
+    ]
+  },
+  "ending_guardian": {
+    "text": "You choose duty. You return to the manor and seal yourself within its walls. With new knowledge, you reinforce the bindings, deepen the seal, and establish yourself as the entity's eternal guardian. It's a lonely existence, but a necessary one. Centuries may pass. Civilizations may rise and fall. But you remain, the keeper of the seal, the bridge between worlds, ensuring that what was imprisoned stays imprisoned. In the quiet moments, you sometimes communicate with the entity—it's no longer hostile. It understands. In its own way, it accepts its prison. And you accept your purpose.",
+    "choices": [
+      {
+        "label": "The End - Guardian Route Completed",
+        "requirements": {},
+        "effects": {
+          "experience": 75
+        },
+        "next": "ending_guardian"
+      }
+    ]
+  },
+  "ending_rebellion": {
+    "text": "You choose chaos. You deliberately break the seal, shattering the bindings that have held for millennia. The entity emerges, vast and incomprehensible to mortal minds. The world trembles. Some see it as a savior—the rightful inhabitants of this world, finally freed. Others see it as an apocalypse. Reality itself warps around the entity's presence. You're changed by proximity to it—enhanced, transformed, no longer quite human. You become something new, something that bridges both worlds. The entity doesn't destroy humanity; it coexists, integrating with the mortal realm in ways both beautiful and terrible. You become its spokesperson, its bridge, its ambassador to humanity.",
+    "choices": [
+      {
+        "label": "The End - Rebellion Route Completed",
+        "requirements": {},
+        "effects": {
+          "experience": 75
+        },
+        "next": "ending_rebellion"
+      }
+    ]
+  },
+  "bartender_lore": {
+    "text": "'That manor's been empty for years,' the bartender says, sliding you a drink. 'Or so we thought. There was a research group there, maybe a decade ago. Academics, they said. But then people started disappearing. The authorities investigated, found nothing. The group left, but the manor's still there, waiting. Some say it's cursed. Others say something's still inside, watching.' He leans in close. 'You've got the look of someone who's been inside that place. Be careful what you stir up.'",
+    "choices": [
+      {
+        "label": "Ask more about the missing people",
+        "requirements": {},
+        "effects": {
+          "experience": 15
+        },
+        "next": "tavern_scene"
+      }
+    ]
+  },
+  "village_exploration": {
+    "text": "You explore the village, learning about its simple rhythms. There's a blacksmith, a healer, farmers, merchants. Normal people living normal lives. But you're acutely aware that just miles away, reality is far stranger. The healer, a kind woman named Sarah, notices your disheveled state and offers you shelter. She doesn't ask where you come from, but her eyes suggest she knows you've been through something. She gives you food and a place to sleep, asking only that you stay quiet about your origins.",
+    "choices": [
+      {
+        "label": "Stay and recover, then decide your path",
+        "requirements": {},
+        "effects": {
+          "stats": {
+            "hp": 20
+          },
+          "experience": 20
+        },
+        "next": "village_recovery"
+      }
+    ]
+  },
+  "forest_temple": {
+    "text": "The ruins reveal themselves as a temple dedicated to something ancient. The architecture is unlike anything you've ever seen—it predates human civilization by centuries, maybe millennia. Inside the main chamber, you find murals depicting the same entity you saw in the pool, surrounded by humans who seem to worship it. But the murals also show a betrayal—the humans turning against it, sealing it away. You understand: the manor wasn't the first prison. This temple was.",
+    "choices": [
+      {
+        "label": "Investigate the temple's sanctum",
+        "requirements": {
+          "stats": {
+            "wisdom": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "temple_explored": true
+          },
+          "items": [
+            {
+              "name": "Ancient Amulet",
+              "type": "quest_item",
+              "effect": {}
+            }
+          ],
+          "experience": 30
+        },
+        "next": "deep_forest"
+      }
+    ]
+  },
+  "lyra_revelation": {
+    "text": "'I was part of the original research team,' Lyra explains. 'I discovered what was really happening—that the ritual wasn't about containing danger, but about controlling power. I refused to participate, and I've spent years trying to find a way to free what was imprisoned without destroying the world. You're the key. Your awakening is the signal that the seal is weakening naturally. Soon, it will break on its own. I wanted to prepare you for what comes next.'",
+    "choices": [
+      {
+        "label": "Ask about the entity and your role",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "lyra_explanation": true
+          },
+          "experience": 20
+        },
+        "next": "lyra_truth"
+      }
+    ]
+  },
+  "lyra_combat": {
+    "text": "You rush at Lyra, but she's faster. She moves with supernatural grace, and you realize she's not entirely human. Combat is brief and one-sided. But instead of killing you, she knocks you down and pins you. 'I understand your anger,' she says. 'But violence solves nothing. Listen to me.' As you struggle, she continues: 'You're a seal. The entity inside you is ancient and powerful. The ritual that created you was supposed to last forever, but it's breaking. I can help you, or I can leave you to face what comes alone.'",
+    "choices": [
+      {
+        "label": "Listen to her terms",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "lyra_captured": true
+          },
+          "experience": 20
+        },
+        "next": "lyra_truth"
+      }
+    ]
+  },
+  "lyra_truth": {
+    "text": "'The entity isn't evil,' Lyra says. 'It's alien, yes. Powerful, absolutely. But evil? No. It was betrayed and imprisoned unjustly. My goal is to free it safely—to create a world where both humans and the Other can coexist peacefully. But that requires someone strong enough to serve as a bridge, powerful enough to keep both sides balanced. That's you. You've always been you. But you're also the seal. You're both.'",
+    "choices": [
+      {
+        "label": "Accept Lyra's guidance and become the bridge",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "sided_with_lyra": true
+          },
+          "experience": 30
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "mountain_pass": {
+    "text": "The mountains are harsh and unforgiving. The air grows thin as you climb, and the cold bites at exposed skin. But the view is breathtaking—you can see the manor in the distance, can see the forest, can see the vast world beyond. As you reach a high pass, you notice something: other people, camping here, waiting. They're dressed in robes marked with symbols. The same symbols from the manor. They're waiting for something. Or for someone.",
+    "choices": [
+      {
+        "label": "Approach them and demand answers",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "met_robed_ones": true
+          },
+          "experience": 15
+        },
+        "next": "mountain_cult_meeting"
+      },
+      {
+        "label": "Avoid them and find another path",
+        "requirements": {},
+        "effects": {
+          "experience": 10
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "mountain_cult_meeting": {
+    "text": "The robed figures recognize you immediately. 'The seal has awakened,' their leader says. 'This is both blessing and catastrophe. We've been waiting for your emergence. The old masters sent us to either bring you back to the manor for reinforcement... or to stop you from interfering with what comes next.' She steps forward. 'What will you do?'",
+    "choices": [
+      {
+        "label": "Fight and escape",
+        "requirements": {
+          "stats": {
+            "strength": 10
+          }
+        },
+        "effects": {
+          "flags": {
+            "fought_cult": true
+          },
+          "experience": 30
+        },
+        "next": "outside_world"
+      },
+      {
+        "label": "Talk your way through",
+        "requirements": {
+          "stats": {
+            "wisdom": 8
+          }
+        },
+        "effects": {
+          "flags": {
+            "convinced_cult": true
+          },
+          "experience": 25
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "village_recovery": {
+    "text": "You stay in the village for a week, recovering your strength. Sarah tends to your wounds and asks no questions. The village is peaceful, but as your health returns, you feel the pull of the larger world. There are answers out there—about who you are, about the ritual, about your purpose. You can stay here and live quietly, or you can venture back out into the mysteries that call to you.",
+    "choices": [
+      {
+        "label": "Leave the village and seek answers",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "left_village": true
+          },
+          "experience": 20
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "final_confrontation_prep": {
+    "text": "You refuse Elena's escape and instead prepare to face what's coming. You gather the tools you've found—the dagger, the journal, the knowledge, the will. Elena watches, sad but resigned. 'You're braver than I expected,' she says. 'I'll help you, then. Let's face them together.' The sound of vehicles echoes outside. The 'others' Elena mentioned are arriving. The confrontation you've been building toward is finally here.",
+    "choices": [
+      {
+        "label": "Face the incoming threat",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "final_confrontation": true
+          },
+          "experience": 40
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "prisoner_knowledge": {
+    "text": "As the prisoner recovers, they begin to speak. 'I was trying to free it,' they tell you. 'The entity. They kept me imprisoned to stop me from completing the unbinding ritual. But I managed to leave clues, messages hidden in the manor. You have to find them. The ritual can't be completed without a willing sacrifice, but perhaps... perhaps there's another way. A way that doesn't require death, just transformation.'",
+    "choices": [
+      {
+        "label": "Continue your journey",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "prisoner_trust": true
+          },
+          "experience": 15
+        },
+        "next": "outside_world"
+      }
+    ]
+  },
+  "intro_escape_denial": {
+    "text": "You decide to stay within the manor's walls. There's too much you don't understand, too many mysteries left unsolved. Elena looks relieved. 'Thank you,' she says. 'Together, maybe we can find the truth without running.' The two of you begin investigating in earnest, gathering evidence, piecing together the larger picture of what happened here and why.",
+    "choices": [
+      {
+        "label": "Continue investigating with Elena",
+        "requirements": {},
+        "effects": {
+          "flags": {
+            "staying_with_elena": true
+          },
+          "experience": 15
+        },
+        "next": "garden_entry"
+      }
+    ]
+  },
+  "death": {
+    "text": "Your vision fades as darkness overtakes you. The cold embrace of the void claims another soul. Your journey ends here... or does another cycle begin?",
+    "choices": [
+      {
+        "label": "Restart the cycle (Reset Game)",
+        "requirements": {},
+        "effects": {},
+        "next": "intro_01"
+      }
+    ]
+  }
+}

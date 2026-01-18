@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+
+# Node
+client/node_modules/
+client/dist/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Game Data (Optional: ignore save states if you want distinct saves per machine)
+# server/data/player/player_state.json
+
+# IDE
+.vscode/
+
+# Local Dev
+.env

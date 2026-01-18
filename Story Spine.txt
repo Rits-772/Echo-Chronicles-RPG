@@ -1,0 +1,235 @@
+I’ll give you a clean, anime-inspired story overview, intentionally non-detailed, modular, and expandable. Think of this as the season outline, not the script.
+
+XP MINIMA — HIGH-LEVEL STORY OVERVIEW
+
+(Abstract Narrative Spine)
+
+1. Genre & Vibe (Anchor First)
+
+Genre blend:
+
+Psychological RPG
+
+Soft sci-fi / metaphysical fantasy
+
+Existential mystery
+
+Anime inspirations (structural, not aesthetic):
+
+Ergo Proxy — identity, sealed truths
+
+Serial Experiments Lain — reality vs perception
+
+Attack on Titan (early seasons) — walls, containment, hidden systems
+
+Made in Abyss — descent-based progression, irreversible knowledge
+
+Steins;Gate — consequences of awareness
+
+No flashy power scaling. No chosen-one speeches. Quiet dread.
+
+2. Core Premise (One Paragraph)
+
+The world is stable because something is contained.
+Most people don’t know what it is — only that disasters stopped happening long ago.
+
+The containment system is failing.
+
+You awaken inside one of its anchor zones (the manor).
+You are not the first anchor. You may be the last.
+
+What happens next depends on whether you:
+
+maintain the system,
+
+escape it,
+
+or dismantle it entirely.
+
+3. World Structure (Outside the Manor)
+
+The world is divided into functional zones, not “fantasy regions”.
+
+Each zone exists because of the containment system.
+
+Zone Types
+
+Anchor Zones
+
+Facilities like the manor
+
+Designed to stabilize reality
+
+Quiet, abandoned, ritualistic
+
+Peripheral Settlements
+
+Villages and towns near anchor zones
+
+People live normal lives but follow strange customs
+
+Superstitions replace truth
+
+Relay Zones
+
+Mountains, towers, underground chambers
+
+Maintain the system’s flow
+
+Heavily damaged or unstable
+
+Dead Zones
+
+Areas where containment failed briefly
+
+Physics, memory, or biology behave incorrectly
+
+No one stays long
+
+You choose which to explore — and in what order.
+
+4. Narrative Progression (Abstract Acts)
+Act 1 — Awakening (Manor)
+
+You learn how the world works mechanically
+
+Hints of a larger system
+
+No global stakes yet
+
+Act 2 — Exposure (Outside World)
+
+You see how normal life exists because of containment
+
+NPCs deny obvious inconsistencies
+
+Your stats begin shaping interpretation
+
+Act 3 — Fracture
+
+Zones start destabilizing
+
+Events occur based on what you’ve ignored or explored
+
+You realize inaction is also a choice
+
+Act 4 — Decision
+
+You learn the cost of each possible resolution
+
+No option restores the world to a “perfect” state
+
+The game asks what kind of future you accept
+
+5. Thematic Axes (Use These to Design Everything)
+
+Every location, NPC, or event should sit on at least one axis:
+
+Stability vs Freedom
+
+Ignorance vs Awareness
+
+Preservation vs Evolution
+
+Control vs Trust
+
+If something doesn’t touch an axis, cut it.
+
+6. Player Role (Abstract, No Lore Dump)
+
+You are:
+
+a stabilizer,
+
+a witness,
+
+and a variable.
+
+Not a hero.
+Not a villain.
+A system anomaly.
+
+Your growth is not power — it is capacity to choose.
+
+7. Endings (High-Level Only)
+Ending Types (Not Scripts)
+
+Preserver Ending
+
+World remains stable
+
+You are lost to the system
+
+Humanity continues unchanged
+
+Liberation Ending
+
+System is dismantled
+
+World changes unpredictably
+
+Humanity adapts or collapses
+
+Escape Ending
+
+You leave the system
+
+World continues temporarily
+
+Consequences deferred
+
+Hidden Ending
+
+Requires extreme stats / rare flags
+
+System is redefined, not destroyed
+
+Ambiguous, unsettling outcome
+
+8. How Anime Inspiration Fits (Without Copying)
+
+Use anime ideas like this:
+
+AoT-style revelation → world truths arrive late and recontextualize earlier zones
+
+Lain-style perception → low vs high Perception changes what the world seems to be
+
+Made in Abyss descent → deeper exploration = irreversible knowledge
+
+Ergo Proxy ambiguity → answers create more questions
+
+Never explain everything. Let players argue online. That’s success.
+
+9. Why This Overview Is Enough
+
+This gives you:
+
+Freedom to design locations
+
+Freedom to invent NPCs
+
+Freedom to grow lore organically
+
+A consistent philosophical backbone
+
+You can now:
+
+design regions one by one,
+
+write nodes without fear of contradiction,
+
+scale the story safely.
+
+10. Next Practical Step (Suggested)
+
+Now that you have the story spine, the next logical design task is:
+
+👉 Pick ONE zone outside the manor and define:
+
+its purpose,
+
+its dominant theme,
+
+2–3 narrative questions it raises.
+
+Not write scenes. Just define why it exists.

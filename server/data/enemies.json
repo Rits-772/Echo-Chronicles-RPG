@@ -1,0 +1,61 @@
+[
+  {
+    "id": "rat_01",
+    "name": "Plague Rat",
+    "hp": 15,
+    "max_hp": 15,
+    "attack_power": 6,
+    "defence": 1,
+    "exp_reward": 10,
+    "difficulty": 1,
+    "loot_table": []
+  },
+  {
+    "id": "wolf_01",
+    "name": "Starving Wolf",
+    "hp": 30,
+    "max_hp": 30,
+    "attack_power": 9,
+    "defence": 2,
+    "exp_reward": 25,
+    "difficulty": 2,
+    "loot_table": []
+  },
+  {
+    "id": "bandit_01",
+    "name": "Highwayman",
+    "hp": 45,
+    "max_hp": 45,
+    "attack_power": 11,
+    "defence": 4,
+    "exp_reward": 40,
+    "difficulty": 3,
+    "loot_table": [
+      { "item_id": "dagger_01", "chance": 0.3 }
+    ]
+  },
+  {
+    "id": "skel_01",
+    "name": "Rotted Skeleton",
+    "hp": 35,
+    "max_hp": 35,
+    "attack_power": 13,
+    "defence": 2,
+    "exp_reward": 35,
+    "difficulty": 3,
+    "loot_table": [
+        { "item_id": "sword_01", "chance": 0.1 }
+    ]
+  },
+  {
+    "id": "shadow_01",
+    "name": "Shadow Stalker",
+    "hp": 60,
+    "max_hp": 60,
+    "attack_power": 15,
+    "defence": 5,
+    "exp_reward": 80,
+    "difficulty": 5,
+    "loot_table": []
+  }
+]

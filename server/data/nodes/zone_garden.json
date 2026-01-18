@@ -1,0 +1,98 @@
+{
+  "garden_entry": {
+    "text": "The Manor's heavy oak doors groan as they close behind you. You stand on the threshold of the Overgrown Garden. What was once a manicured landscape is now a chaotic tangle of thorny vines, massive ferns, and trees that seem to have grown centuries in mere decades. The air is thick with the scent of wet earth and rot. A stone path, cracked and uplifted by roots, winds its way into the green gloom.",
+    "choices": [
+      {
+        "label": "Follow the path deeper (Cautious)",
+        "requirements": {
+           "stats": { "perception": 6 }
+        },
+        "effects": {
+           "experience": 10
+        },
+        "next": "garden_path_safe"
+      },
+      {
+        "label": "Push through the undergrowth (Direct)",
+        "requirements": {},
+        "effects": {
+           "combat": "rat_01",
+           "experience": 15
+        },
+        "next": "garden_clearing"
+      },
+      {
+        "label": " Examine the strange flora nearby",
+        "requirements": {
+            "stats": { "wisdom": 5 }
+        },
+        "effects": {
+            "experience": 10,
+            "items": [
+                { "name": "Healing Herb", "type": "consumable", "effect": { "hp": 10 } }
+            ]
+        },
+        "next": "garden_entry"
+      }
+    ]
+  },
+  "garden_path_safe": {
+      "text": "You move carefully along the ruined path, stepping over twisted roots. The silence here is unnatural—no birds, no insects, just the rustle of leaves in a wind you can't feel. You notice statues of weeping angels along the path, their faces eroded or... clawed off.",
+      "choices": [
+          {
+              "label": "Press onward",
+              "effects": { "experience": 5 },
+              "next": "garden_crossroads"
+          }
+      ]
+  },
+  "garden_clearing": {
+      "text": "You hack your way through the dense vines, emerging into a small clearing. In the center lies the skeletal remains of a large animal, its bones picked clean. A glint of metal catches your eye near the ribcage.",
+      "choices": [
+          {
+              "label": "Investigate the remains",
+              "effects": {
+                  "combat": "wolf_01",
+                  "items": [{ "name": "Old Coin", "type": "quest_item", "effect": {} }]
+              },
+              "next": "garden_crossroads"
+          }
+      ]
+  },
+  "garden_crossroads": {
+      "text": "The path splits at a large, dried-up fountain. To the East, the vegetation thins out, revealing a rusted iron gate leading out of the estate. To the West, a dark thicket seems to hum with a low, vibrating sound.",
+      "choices": [
+          {
+              "label": "Head East towards the gate (To Village)",
+              "effects": { "experience": 10 },
+              "next": "village_entry"
+          },
+          {
+              "label": "Investigate the humming thicket (West)",
+              "requirements": { "stats": { "vitality": 7 } },
+              "effects": { 
+                  "experience": 25,
+                  "combat": "shadow_01" 
+              },
+              "next": "garden_secret"
+          }
+      ]
+  },
+  "garden_secret": {
+      "text": "You defeated the Shadow Stalker guarding this place. Behind the thicket, you find a small shrine to an unknown deity. It remains untouched by the corruption of the garden.",
+      "choices": [
+          {
+              "label": "Pray at the shrine",
+              "effects": {
+                  "stats": { "max_mp": 10, "mp": 10, "wisdom": 1 },
+                  "experience": 50
+              },
+              "next": "garden_crossroads"
+          },
+          {
+              "label": "Leave it be",
+              "next": "garden_crossroads"
+          }
+      ]
+  }
+}

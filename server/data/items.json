@@ -1,0 +1,44 @@
+[
+  {
+    "id": "dagger_01",
+    "name": "Rusty Dagger",
+    "type": "weapon",
+    "effect": { "strength": 2 },
+    "description": "Better than nothing."
+  },
+  {
+    "id": "sword_01",
+    "name": "Iron Sword",
+    "type": "weapon",
+    "effect": { "strength": 5 },
+    "description": "A standard soldier's blade."
+  },
+  {
+    "id": "axe_01",
+    "name": "Woodcutter's Axe",
+    "type": "weapon",
+    "effect": { "strength": 6, "agility": -1 },
+    "description": "Heavy but effective."
+  },
+  {
+    "id": "armor_leather",
+    "name": "Leather Jerkin",
+    "type": "armor",
+    "effect": { "defence": 2 },
+    "description": "Offers basic protection."
+  },
+  {
+    "id": "armor_chain",
+    "name": "Rusted Chainmail",
+    "type": "armor",
+    "effect": { "defence": 5, "agility": -2 },
+    "description": "Heavy links of iron."
+  },
+  {
+    "id": "ring_vitality",
+    "name": "Ring of Health",
+    "type": "accessory",
+    "effect": { "vitality": 3 },
+    "description": "Warm to the touch."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "game": {
+    "title": "XP Minima RPG",
+    "version": "0.1.0",
+    "description": "Terminal-first, stats-driven narrative RPG"
+  },
+  "player": {
+    "starting_level": 1,
+    "starting_stats": {
+      "hp": 50,
+      "mp": 25,
+      "strength": 5,
+      "defence": 5,
+      "agility": 5,
+      "vitality": 5,
+      "wisdom": 5,
+      "perception": 5,
+      "lifeforce": 100
+    },
+    "starting_free_points": 5,
+    "level_up_points": 2
+  },
+  "scaling": {
+    "hp_per_point": 5,
+    "mp_per_point": 5,
+    "other_stats_per_point": 1
+  },
+  "experience": {
+    "exp_per_node": 10,
+    "level_up_threshold": 100,
+    "threshold_increase_per_level": 50
+  },
+  "paths": {
+    "player_state": "data/player/player_state.json",
+    "world_state": "data/world/world_state.json",
+    "nodes": "data/nodes/nodes.json",
+    "session_log": "logs/session.log"
+  }
+}
