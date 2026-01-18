@@ -57,5 +57,38 @@
     "exp_reward": 80,
     "difficulty": 5,
     "loot_table": []
+  },
+  {
+    "id": "wolf_rabid",
+    "name": "Rabid Wolf",
+    "hp": 30,
+    "max_hp": 30,
+    "attack_power": 8,
+    "defence": 2,
+    "exp_reward": 20,
+    "difficulty": 2,
+    "loot_table": [{"item_id": "wolf_pelt", "chance": 0.5}]
+  },
+  {
+    "id": "ent_sapling",
+    "name": "Twisted Sapling",
+    "hp": 50,
+    "max_hp": 50,
+    "attack_power": 6,
+    "defence": 6,
+    "exp_reward": 35,
+    "difficulty": 3,
+    "loot_table": [{"item_id": "herb_healing", "chance": 0.4}]
+  },
+  {
+    "id": "bandit_scout",
+    "name": "Bandit Scout",
+    "hp": 40,
+    "max_hp": 40,
+    "attack_power": 12,
+    "defence": 3,
+    "exp_reward": 45,
+    "difficulty": 3,
+    "loot_table": [{"item_id": "gem_ancient", "chance": 0.1}]
   }
 ]

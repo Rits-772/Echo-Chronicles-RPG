@@ -40,5 +40,24 @@
     "type": "accessory",
     "effect": { "vitality": 3 },
     "description": "Warm to the touch."
+  },
+  {
+      "id": "wolf_pelt",
+      "name": "Wolf Pelt",
+      "type": "material",
+      "description": "Thick fur. Valuable to traders."
+  },
+  {
+      "id": "herb_healing",
+      "name": "Healing Herb",
+      "type": "consumable",
+      "effect": {"hp": 15},
+      "description": "A bitter leaf that knits flesh."
+  },
+  {
+      "id": "gem_ancient",
+      "name": "Ancient Gem",
+      "type": "quest_item",
+      "description": "It pulses with a faint blue light."
   }
 ]

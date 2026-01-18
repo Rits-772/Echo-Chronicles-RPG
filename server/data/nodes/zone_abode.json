@@ -1,0 +1,25 @@
+{
+  "abode_entry": {
+    "text": "The abandoned house smells of dry wood and old herbs. It's dusty, but the roof is intact and the fireplace works. This place... it feels safe. A rare feeling in this world. A straw mattress lies in the corner.",
+    "choices": [
+      {
+        "label": "Rest (Restore HP & MP)",
+        "effects": {
+           "stats": { "hp": 999, "mp": 999 },
+           "message": "You sleep deeply, dreamless and still."
+        },
+        "next": "abode_entry"
+      },
+      {
+        "label": "Meditate on your journey",
+        "requirements": { "stats": { "wisdom": 10 } },
+        "effects": { "experience": 10 },
+        "next": "abode_entry"
+      },
+      {
+        "label": "Leave the Abode",
+        "next": "village_square"
+      }
+    ]
+  }
+}

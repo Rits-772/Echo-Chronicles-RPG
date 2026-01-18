@@ -24,16 +24,22 @@
     ]
   },
   "village_square": {
-      "text": "The village square is quiet. A few people are gathered around a dry well, miming the action of drawing water, though there is no bucket and no rope. They smile at you—a uniform, practiced smile that doesn't reach their eyes.",
+      "text": "The village square is quiet. A few people are gathered around a dry well, miming the action of drawing water. To your left is an abandoned house (The Abode). To the north lies the path to the Whispering Forest.",
       "choices": [
           {
+              "label": "Enter The Abode (Rest)",
+              "next": "abode_entry"
+          },
+          {
+              "label": "Travel to Whispering Forest",
+              "next": "forest_entry"
+          },
+          {
               "label": "Ask about the Manor",
-              "effects": {},
               "next": "village_elder_talk"
           },
            {
               "label": "Visit the General Store",
-              "effects": {},
               "next": "village_store"
           }
       ]

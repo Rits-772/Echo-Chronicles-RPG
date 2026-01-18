@@ -1,0 +1,106 @@
+{
+  "forest_entry": {
+    "text": "The trees here are ancient, their bark pale as bone. A thick mist clings to the ground, swirling around your ankles. You hear the snapping of twigs and distant, unnatural howls. This is the Whispering Forest.",
+    "choices": [
+      {
+        "label": "Hunt in the outskirts (Low Risk)",
+        "effects": { "combat": "wolf_rabid" },
+        "next": "forest_clearing"
+      },
+      {
+        "label": "Venture deeper (Medium Risk)",
+        "effects": { "combat": "ent_sapling" },
+        "next": "forest_deep"
+      },
+      {
+        "label": "Return to Village",
+        "next": "village_square"
+      }
+    ]
+  },
+  "forest_clearing": {
+    "text": "You stand in a small clearing. The mist seems thinner here.",
+    "choices": [
+      {
+        "label": "Search for herbs",
+        "requirements": { "stats": { "perception": 6 } },
+        "effects": {
+             "items": [{ "name": "Healing Herb", "type": "consumable", "effect": { "hp": 15 } }]
+        },
+        "next": "forest_entry"
+      },
+      {
+        "label": "Continue hunting",
+        "effects": { "combat": "wolf_rabid" },
+        "next": "forest_clearing"
+      },
+      {
+         "label": "Go back",
+         "next": "forest_entry"
+      }
+    ]
+  },
+  "forest_deep": {
+      "text": "The canopy blocks out almost all light. The silence is heavy here. You feel eyes watching you from the shadows.",
+      "choices": [
+          {
+              "label": "Ambush the watchers!",
+              "effects": { "combat": "bandit_scout" },
+              "next": "forest_temple_entrance"
+          },
+          {
+              "label": "Move quietly (Stealth)",
+              "requirements": { "stats": { "agility": 8 } },
+              "effects": { "experience": 30 },
+              "next": "forest_temple_entrance"
+          }
+      ]
+  },
+  "forest_temple_entrance": {
+      "text": "You find crumbling stone ruins overgrown with luminescent moss. An 'Ancient Temple' stands before you, its entrance gaping like a maw.",
+      "choices": [
+          {
+              "label": "Enter the Temple (Dungeon)",
+              "requirements": { "stats": { "strength": 10 } },
+              "next": "forest_temple_trap" 
+          },
+          {
+              "label": "Retreat to the forest edge",
+              "next": "forest_entry"
+          }
+      ]
+  },
+  "forest_temple_trap": {
+      "text": "As you step inside, the door slams shut! Mechanisms grind in the walls. Three colored tiles light up on the floor: RED, GREEN, BLUE. Use your INTELLECT.",
+      "choices": [
+          {
+              "label": "Press RED (Strength)",
+              "effects": { "stats": { "hp": -10 }, "message": "Dart trap triggered!" },
+              "next": "forest_temple_entrance"
+          },
+          {
+              "label": "Press GREEN (Agility)",
+              "effects": { "stats": { "hp": -10 }, "message": "Pitfall trap triggered!" },
+              "next": "forest_temple_entrance"
+          },
+          {
+              "label": "Press BLUE (Wisdom)",
+              "requirements": { "stats": { "wisdom": 8 } },
+              "effects": { 
+                  "experience": 100,
+                  "items": [{ "name": "Ancient Gem", "type": "quest_item" }]
+              },
+              "next": "forest_temple_reward"
+          }
+      ]
+  },
+  "forest_temple_reward": {
+      "text": "The mechanism clicks, and a pedestal rises. You claim the prize.",
+      "choices": [
+          {
+              "label": "Take loot and leave",
+              "next": "forest_entry"
+          }
+      ]
+  }
+}

@@ -94,7 +94,11 @@ class NodeEngine:
         # Apply stat changes
         if "stats" in effects:
             for stat_name, delta in effects["stats"].items():
-                if stat_name in player_stats:
+                if stat_name == "hp":
+                    self.rules_engine.heal(player_stats, delta)
+                elif stat_name == "mp":
+                    self.rules_engine.restore_mana(player_stats, delta)
+                elif stat_name in player_stats:
                     player_stats[stat_name] += delta
         
         # Apply flag changes
